@@ -137,6 +137,20 @@ The following example updates the built-in administrators group with AAD account
 </GroupConfiguration>
 ```
 
+Example 1.1: AAD focused with SID.
+
+The following example updates the built-in administrators group (Using SID) with AAD account "bob@contoso.com" and an Azure AD group with the SID **S-1-12-1-111111111-22222222222-3333333333-4444444444** on an AAD-joined machine. 
+
+```xml
+<GroupConfiguration>
+    <accessgroup desc = "S-1-5-32-544">
+        <group action = "U" />
+        <add member = "AzureAD\bob@contoso.com"/>
+        <add member = "S-1-12-1-111111111-22222222222-3333333333-4444444444"/>
+    </accessgroup>
+</GroupConfiguration>
+```
+
 Example 2: Replace / Restrict the built-in administrators group with an AAD user account.
 
 > [!NOTE]
